@@ -1,13 +1,13 @@
-package com.sptech.school.Delivery;
+package com.sptech.school.Paris86;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DeliveryApplication {
+public class ParisApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DeliveryApplication.class, args);
+		SpringApplication.run(ParisApplication.class, args);
 	}
 
 }
