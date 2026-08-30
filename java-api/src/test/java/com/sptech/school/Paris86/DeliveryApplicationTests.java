@@ -1,4 +1,4 @@
-package com.sptech.school.Delivery;
+package com.sptech.school.Paris86;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
