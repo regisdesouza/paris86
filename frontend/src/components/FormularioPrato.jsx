@@ -87,7 +87,7 @@ export function FormularioPrato({
                         Carboidrato <span className={`${styles.tag} ${styles.tagBase}`}>base</span>
                     </div>
                     <select value={carboidratoId} onChange={carboidrato => setCarboidratoId(carboidrato.target.value)}>
-                        <option value="">— nenhum —</option>
+                        <option value="">-- nenhum --</option>
                         {carboidratos.map(carboidrato => <option key={carboidrato.id} value={carboidrato.id}>{carboidrato.nome}</option>)}
                     </select>
                 </div>
@@ -97,7 +97,7 @@ export function FormularioPrato({
                         Proteína <span className={`${styles.tag} ${styles.tagForca}`}>força</span>
                     </div>
                     <select value={proteinaId} onChange={proteina => setProteinaId(proteina.target.value)}>
-                        <option value="">— nenhuma —</option>
+                        <option value="">-- nenhuma --</option>
                         {proteinas.map(proteina => <option key={proteina.id} value={proteina.id}>{proteina.nome}</option>)}
                     </select>
                 </div>
@@ -107,7 +107,7 @@ export function FormularioPrato({
                         Vegetal <span className={`${styles.tag} ${styles.tagFresh}`}>fresh</span>
                     </div>
                     <select value={vegetalId} onChange={vegetal => setVegetalId(vegetal.target.value)}>
-                        <option value="">— nenhum —</option>
+                        <option value="">-- nenhum --</option>
                         {vegetais.map(vegetal => <option key={vegetal.id} value={vegetal.id}>{vegetal.nome}</option>)}
                     </select>
                 </div>
@@ -117,7 +117,7 @@ export function FormularioPrato({
                         Gordura <span className={`${styles.tag} ${styles.tagExtra}`}>extra</span>
                     </div>
                     <select value={gorduraId} onChange={gordura => setGorduraId(gordura.target.value)}>
-                        <option value="">— nenhuma —</option>
+                        <option value="">-- nenhuma --</option>
                         {gorduras.map(gordura => <option key={gordura.id} value={gordura.id}>{gordura.nome}</option>)}
                     </select>
                 </div>
@@ -128,7 +128,7 @@ export function FormularioPrato({
                     Tempero <span className={`${styles.tag} ${styles.tagToque}`}>toque</span>
                 </div>
                 <select value={temperoId} onChange={tempero => setTemperoId(tempero.target.value)}>
-                    <option value="">— nenhum —</option>
+                    <option value="">-- nenhum --</option>
                     {temperos.map(tempero => <option key={tempero.id} value={tempero.id}>{tempero.nome}</option>)}
                 </select>
             </div>
