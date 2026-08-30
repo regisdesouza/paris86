@@ -1,4 +1,360 @@
-.titulo{
-    display: flex;
-    background-color: yellowgreen;
+.pagina {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #1c1a17;
+}
+
+.cabecalhoTitulo {
+  background: #1c1a17;
+  color: #f2ece0;
+  padding: 48px 32px;
+  border-bottom: 3px solid #b08d57;
+  text-align: center;
+}
+
+.cabecalhoTitulo span {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #b08d57;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cabecalhoTitulo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin: 0 0 14px;
+}
+
+.cabecalhoTitulo p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  color: #cfc6b8;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.cardapioSecao {
+  padding: 40px 32px;
+}
+
+.cardapioSecao h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #f2ece0;
+  margin: 0 0 24px;
+}
+
+.cardapioLista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.cardapioCard {
+  background: #241f19;
+  color: #f2ece0;
+  border: 1px solid #b08d57;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.cardapioEmote {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cardapioNome {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.cardapioDescricao {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12.5px;
+  color: #cfc6b8;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.cardapioPreco {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: #b08d57;
+}
+
+.montagemGrade {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  padding: 40px 32px;
+  border-top: 1px solid #3a332a;
+  align-items: start;
+}
+
+
+
+.formularioSecao h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #f2ece0;
+  margin: 0 0 6px;
+}
+
+.formularioOrigem {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  color: #a89e8a;
+  margin-bottom: 20px;
+}
+
+.formularioGrade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+
+.formularioCampo {
+  margin-bottom: 16px;
+}
+
+.formularioLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #f2ece0;
+  margin-bottom: 6px;
+}
+
+.tag {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.tagBase {
+  background: #b08d57;
+  color: #1c1a17;
+}
+
+.tagForca {
+  background: #6e1423;
+  color: #f2ece0;
+}
+
+.tagFresh {
+  background: #7c8c5a;
+  color: #f2ece0;
+}
+
+.tagExtra {
+  background: #d8b98a;
+  color: #1c1a17;
+}
+
+.tagToque {
+  background: #8a7ca8;
+  color: #f2ece0;
+}
+
+.formularioCampo input,
+.formularioCampo select {
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  padding: 12px 14px;
+  border: 1px solid #3a332a;
+  border-radius: 5px;
+  background: #0f1712;
+  color: #f2ece0;
+}
+
+.formularioCampo input::placeholder {
+  color: #7a7161;
+}
+
+.formularioCampo input:focus,
+.formularioCampo select:focus {
+  outline: none;
+  border-color: #b08d57;
+}
+
+.formularioBotao {
+  width: 100%;
+  background: #6e1423;
+  color: #f2ece0;
+  border: none;
+  padding: 16px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s ease;
+}
+
+.formularioBotao:hover {
+  background: #8a1c2d;
+}
+
+.previaQuadro {
+  background: #f2ece0;
+  color: #2b2620;
+  border-radius: 4px;
+  padding: 28px 24px 24px;
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  position: relative;
+  height: 443px;
+}
+
+.previaQuadro::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: radial-gradient(circle at 8px 8px, transparent 7px, #f2ece0 7.5px) 0 0 / 16px 16px repeat-x;
+}
+
+.previaQuadro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin: 0 0 18px;
+  color: #6e1423;
+  border-bottom: 1px dashed #b7ab8f;
+  padding-bottom: 12px;
+}
+
+.previaLinha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #cfc2a4;
+}
+
+.previaTotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #6e1423;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.previaBalanco {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: #7a7161;
+}
+
+.comandaSecao {
+  padding: 8px 32px 56px;
+}
+
+.comandaSecao h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #f2ece0;
+  margin: 0 0 24px;
+}
+
+.comandaLista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 18px;
+}
+
+.comandaFicha {
+  background: #f2ece0;
+  color: #2b2620;
+  border-radius: 4px;
+  padding: 22px 16px 18px;
+  font-family: 'Work Sans', sans-serif;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.comandaFicha::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: radial-gradient(circle at 7px 7px, transparent 6px, #f2ece0 6.5px) 0 0 / 14px 14px repeat-x;
+}
+
+.comandaNome {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #cfc2a4;
+  padding-bottom: 8px;
+}
+
+.comandaPreco {
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.comandaStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.statusPreparo {
+  background: #d8b23c;
+  color: #1c1a17;
+}
+
+.statusEntregue {
+  background: #7c8c5a;
+  color: #f2ece0;
+}
+
+.cardapioCard {
+  background: #241f19;
+  color: #f2ece0;
+  border: 1px solid #b08d57;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.cardapioCard:hover {
+  border-color: #7c8c5a;
+  transform: translateY(-2px);
+}
+
+.comandaIngredientes {
+  font-size: 11.5px;
+  color: #a89e8a;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }

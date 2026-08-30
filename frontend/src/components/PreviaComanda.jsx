@@ -1,3 +1,5 @@
+import styles from '../style.module.css'
+
 export function PreviaComanda({
     nome,
     carboidratoId,
@@ -38,20 +40,20 @@ export function PreviaComanda({
     if (tempero) total = total + tempero.preco;
 
     return (
-        <section>
+        <section className={styles.previaQuadro}>
             <h2>Prévia da comanda</h2>
 
             <p>{nome ? nome : "Novo prato"}</p>
 
-            <p>Carboidrato: {carboidrato ? carboidrato.nome : "--"}</p>
-            <p>Proteína: {proteina ? proteina.nome : "--"}</p>
-            <p>Vegetal: {vegetal ? vegetal.nome : "--"}</p>
-            <p>Gordura: {gordura ? gordura.nome : "--"}</p>
-            <p>Tempero: {tempero ? tempero.nome : "--"}</p>
+            <p className={styles.previaLinha}>Carboidrato: {carboidrato ? carboidrato.nome : "--"}</p>
+            <p className={styles.previaLinha}>Proteína: {proteina ? proteina.nome : "--"}</p>
+            <p className={styles.previaLinha}>Vegetal: {vegetal ? vegetal.nome : "--"}</p>
+            <p className={styles.previaLinha}>Gordura: {gordura ? gordura.nome : "--"}</p>
+            <p className={styles.previaLinha}>Tempero: {tempero ? tempero.nome : "--"}</p>
 
-            <p>Total: R$ {total.toFixed(2)}</p>
+            <p className={styles.previaTotal}>Total: R$ {total.toFixed(2)}</p>
 
-            <p>Balanço nutricional: {preenchidos} / 5 grupos</p>
+            <p className={styles.previaBalanco}>Balanço nutricional: {preenchidos} / 5 grupos</p>
         </section>
     );
 }

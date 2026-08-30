@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import styles from './style.module.css';
 import { Cabecalho } from "./components/Cabecalho";
 import { Cardapio } from "./components/Cardapio";
 import { FormularioPrato } from "./components/FormularioPrato";
@@ -29,34 +30,43 @@ function App() {
   }
 
   return (
-    <>
+    <div className={styles.pagina}>
       <Cabecalho />
 
-      <Cardapio />
-
-      <FormularioPrato
-        nome={nome} setNome={setNome}
-        carboidratoId={carboidratoId} setCarboidratoId={setCarboidratoId}
-        proteinaId={proteinaId} setProteinaId={setProteinaId}
-        vegetalId={vegetalId} setVegetalId={setVegetalId}
-        gorduraId={gorduraId} setGorduraId={setGorduraId}
-        temperoId={temperoId} setTemperoId={setTemperoId}
-        ingredientes={ingredientes}
-        aoEnviarPedido={aoEnviarPedido}
+      <Cardapio
+        setNome={setNome}
+        setCarboidratoId={setCarboidratoId}
+        setProteinaId={setProteinaId}
+        setVegetalId={setVegetalId}
+        setGorduraId={setGorduraId}
+        setTemperoId={setTemperoId}
       />
 
-      <PreviaComanda
-        nome={nome}
-        carboidratoId={carboidratoId}
-        proteinaId={proteinaId}
-        vegetalId={vegetalId}
-        gorduraId={gorduraId}
-        temperoId={temperoId}
-        ingredientes={ingredientes}
-      />
+      <div className={styles.montagemGrade}>
+        <FormularioPrato
+          nome={nome} setNome={setNome}
+          carboidratoId={carboidratoId} setCarboidratoId={setCarboidratoId}
+          proteinaId={proteinaId} setProteinaId={setProteinaId}
+          vegetalId={vegetalId} setVegetalId={setVegetalId}
+          gorduraId={gorduraId} setGorduraId={setGorduraId}
+          temperoId={temperoId} setTemperoId={setTemperoId}
+          ingredientes={ingredientes}
+          aoEnviarPedido={aoEnviarPedido}
+        />
 
-      <ComandaCozinha atualizar={atualizarComanda} />
-    </>
+        <PreviaComanda
+          nome={nome}
+          carboidratoId={carboidratoId}
+          proteinaId={proteinaId}
+          vegetalId={vegetalId}
+          gorduraId={gorduraId}
+          temperoId={temperoId}
+          ingredientes={ingredientes}
+        />
+      </div>
+
+      <ComandaCozinha atualizar={atualizarComanda} ingredientes={ingredientes} />
+    </div>
   );
 }
 

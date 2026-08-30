@@ -7,14 +7,11 @@ public class Cardapio {
     private String prato;
     private String descricao;
     private Double preco;
-
-    public String getPrato() {
-        return prato;
-    }
-
-    public void setPrato(String prato) {
-        this.prato = prato;
-    }
+    private Integer carboidratoId;
+    private Integer proteinaId;
+    private Integer vegetalId;
+    private Integer gorduraId;
+    private Integer temperoId;
 
     public Integer getId() {
         return id;
@@ -32,6 +29,14 @@ public class Cardapio {
         this.emote = emote;
     }
 
+    public String getPrato() {
+        return prato;
+    }
+
+    public void setPrato(String prato) {
+        this.prato = prato;
+    }
+
     public String getDescricao() {
         return descricao;
     }
@@ -46,5 +51,45 @@ public class Cardapio {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Integer getCarboidratoId() {
+        return carboidratoId;
+    }
+
+    public void setCarboidratoId(Integer carboidratoId) {
+        this.carboidratoId = carboidratoId;
+    }
+
+    public Integer getProteinaId() {
+        return proteinaId;
+    }
+
+    public void setProteinaId(Integer proteinaId) {
+        this.proteinaId = proteinaId;
+    }
+
+    public Integer getVegetalId() {
+        return vegetalId;
+    }
+
+    public void setVegetalId(Integer vegetalId) {
+        this.vegetalId = vegetalId;
+    }
+
+    public Integer getGorduraId() {
+        return gorduraId;
+    }
+
+    public void setGorduraId(Integer gorduraId) {
+        this.gorduraId = gorduraId;
+    }
+
+    public Integer getTemperoId() {
+        return temperoId;
+    }
+
+    public void setTemperoId(Integer temperoId) {
+        this.temperoId = temperoId;
     }
 }

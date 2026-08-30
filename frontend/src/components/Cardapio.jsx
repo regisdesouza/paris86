@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import styles from '../style.module.css'
 
-export function Cardapio() {
+export function Cardapio({
+    setNome,
+    setCarboidratoId,
+    setProteinaId,
+    setVegetalId,
+    setGorduraId,
+    setTemperoId
+}) {
 
     const [cardapio, setCardapio] = useState([]);
 
@@ -10,22 +18,33 @@ export function Cardapio() {
             .then(resposta => setCardapio(resposta.data));
     }, []);
 
-    return (
-        <>
-        <section>
-          <span>Cardápio da casa</span>
-        </section>
+    function usarPratoDoCardapio(prato) {
+        setNome(prato.prato);
+        setCarboidratoId(String(prato.carboidratoId));
+        setProteinaId(String(prato.proteinaId));
+        setVegetalId(String(prato.vegetalId));
+        setGorduraId(String(prato.gorduraId));
+        setTemperoId(String(prato.temperoId));
+    }
 
-        <div>
-            {cardapio.map(card =>
-                <div key={card.id}>
-                    {card.emote}
-                    {card.prato}
-                    {card.descricao}
-                    {card.preco}
-                </div>
-            )}
-        </div>
-        </>
+    return (
+        <section className={styles.cardapioSecao}>
+            <h2>Cardápio da casa</h2>
+
+            <div className={styles.cardapioLista}>
+                {cardapio.map(card =>
+                    <div
+                        key={card.id}
+                        className={styles.cardapioCard}
+                        onClick={() => usarPratoDoCardapio(card)}
+                    >
+                        <div className={styles.cardapioEmote}>{card.emote}</div>
+                        <div className={styles.cardapioNome}>{card.prato}</div>
+                        <div className={styles.cardapioDescricao}>{card.descricao}</div>
+                        <div className={styles.cardapioPreco}>R$ {card.preco.toFixed(2)}</div>
+                    </div>
+                )}
+            </div>
+        </section>
     );
 }

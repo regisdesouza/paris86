@@ -1,4 +1,5 @@
 import axios from "axios";
+import styles from '../style.module.css'
 
 export function FormularioPrato({
     nome, setNome,
@@ -67,42 +68,72 @@ export function FormularioPrato({
     }
 
     return (
-        <section>
+        <section className={styles.formularioSecao}>
             <h2>Montar prato</h2>
+            <p className={styles.formularioOrigem}>Monte seu prato escolhendo um item de cada categoria.</p>
 
-            <input
-                type="text"
-                placeholder="Nome do prato"
-                value={nome}
-                onChange={nomePrato => setNome(nomePrato.target.value)}
-            />
+            <div className={styles.formularioCampo}>
+                <input
+                    type="text"
+                    placeholder="Nome do prato"
+                    value={nome}
+                    onChange={nomePrato => setNome(nomePrato.target.value)}
+                />
+            </div>
 
-            <select value={carboidratoId} onChange={carboidrato => setCarboidratoId(carboidrato.target.value)}>
-                <option value="">Carboidrato</option>
-                {carboidratos.map(carboidrato => <option key={carboidrato.id} value={carboidrato.id}>{carboidrato.nome}</option>)}
-            </select>
+            <div className={styles.formularioGrade}>
+                <div className={styles.formularioCampo}>
+                    <div className={styles.formularioLabel}>
+                        Carboidrato <span className={`${styles.tag} ${styles.tagBase}`}>base</span>
+                    </div>
+                    <select value={carboidratoId} onChange={carboidrato => setCarboidratoId(carboidrato.target.value)}>
+                        <option value="">— nenhum —</option>
+                        {carboidratos.map(carboidrato => <option key={carboidrato.id} value={carboidrato.id}>{carboidrato.nome}</option>)}
+                    </select>
+                </div>
 
-            <select value={proteinaId} onChange={proteina => setProteinaId(proteina.target.value)}>
-                <option value="">Proteína</option>
-                {proteinas.map(proteina => <option key={proteina.id} value={proteina.id}>{proteina.nome}</option>)}
-            </select>
+                <div className={styles.formularioCampo}>
+                    <div className={styles.formularioLabel}>
+                        Proteína <span className={`${styles.tag} ${styles.tagForca}`}>força</span>
+                    </div>
+                    <select value={proteinaId} onChange={proteina => setProteinaId(proteina.target.value)}>
+                        <option value="">— nenhuma —</option>
+                        {proteinas.map(proteina => <option key={proteina.id} value={proteina.id}>{proteina.nome}</option>)}
+                    </select>
+                </div>
 
-            <select value={vegetalId} onChange={vegetal => setVegetalId(vegetal.target.value)}>
-                <option value="">Vegetal</option>
-                {vegetais.map(vegetal => <option key={vegetal.id} value={vegetal.id}>{vegetal.nome}</option>)}
-            </select>
+                <div className={styles.formularioCampo}>
+                    <div className={styles.formularioLabel}>
+                        Vegetal <span className={`${styles.tag} ${styles.tagFresh}`}>fresh</span>
+                    </div>
+                    <select value={vegetalId} onChange={vegetal => setVegetalId(vegetal.target.value)}>
+                        <option value="">— nenhum —</option>
+                        {vegetais.map(vegetal => <option key={vegetal.id} value={vegetal.id}>{vegetal.nome}</option>)}
+                    </select>
+                </div>
 
-            <select value={gorduraId} onChange={gordura => setGorduraId(gordura.target.value)}>
-                <option value="">Gordura</option>
-                {gorduras.map(gordura => <option key={gordura.id} value={gordura.id}>{gordura.nome}</option>)}
-            </select>
+                <div className={styles.formularioCampo}>
+                    <div className={styles.formularioLabel}>
+                        Gordura <span className={`${styles.tag} ${styles.tagExtra}`}>extra</span>
+                    </div>
+                    <select value={gorduraId} onChange={gordura => setGorduraId(gordura.target.value)}>
+                        <option value="">— nenhuma —</option>
+                        {gorduras.map(gordura => <option key={gordura.id} value={gordura.id}>{gordura.nome}</option>)}
+                    </select>
+                </div>
+            </div>
 
-            <select value={temperoId} onChange={tempero => setTemperoId(tempero.target.value)}>
-                <option value="">Tempero</option>
-                {temperos.map(tempero => <option key={tempero.id} value={tempero.id}>{tempero.nome}</option>)}
-            </select>
+            <div className={styles.formularioCampo}>
+                <div className={styles.formularioLabel}>
+                    Tempero <span className={`${styles.tag} ${styles.tagToque}`}>toque</span>
+                </div>
+                <select value={temperoId} onChange={tempero => setTemperoId(tempero.target.value)}>
+                    <option value="">— nenhum —</option>
+                    {temperos.map(tempero => <option key={tempero.id} value={tempero.id}>{tempero.nome}</option>)}
+                </select>
+            </div>
 
-            <button onClick={enviarPedido}>Enviar para a cozinha</button>
+            <button className={styles.formularioBotao} onClick={enviarPedido}>Enviar para a cozinha</button>
         </section>
     );
 }
