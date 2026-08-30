@@ -1,4 +1,4 @@
-package com.sptech.school.Delivery;
+package com.sptech.school.Paris86;
 
 public class Comanda {
     private Integer id;
